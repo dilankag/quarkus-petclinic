@@ -5,12 +5,12 @@ import io.quarkus.qute.i18n.MessageBundle;
 
 @MessageBundle
 public interface AppMessages {
-    
+
+    @Message("Quarkus Pet Clinic")
+    String product_title();
+
     @Message("Find Owner")
     String find_owner();
-
-    @Message("Last Name")
-    String last_name();
 
     @Message("Edit Owner")
     String edit_owner();
@@ -24,11 +24,23 @@ public interface AppMessages {
     @Message("Name")
     String name();
 
+    @Message("First Name")
+    String first_name();
+
+    @Message("Last Name")
+    String last_name();
+
     @Message("Address")
     String address();
 
     @Message("Telephone")
     String telephone();
+
+    @Message("Email")
+    String email();
+
+    @Message("Password")
+    String password();
 
     @Message("City")
     String city();
@@ -39,8 +51,26 @@ public interface AppMessages {
     @Message("Pet")
     String pet();
 
-    @Message("Error")
+    @Message("Opps")
     String error();
+
+    @Message("User not found!")
+    String error_user_not_found();
+
+    @Message("User credentials not matched!")
+    String error_user_credentials_not_matched();
+
+    @Message("User credentials not supplied!")
+    String error_user_credentials_not_supplied();
+
+    @Message("User authentication has failed!")
+    String error_user_authentication_has_failed();
+
+    @Message("OTP not matched!")
+    String error_otp_not_matched();
+
+    @Message("User already exist!")
+    String error_user_already_exist();
 
     @Message("None")
     String none();
@@ -51,8 +81,32 @@ public interface AppMessages {
     @Message("Specialties")
     String specialties();
 
-    @Message("Welcome")
-    String welcome();
+    @Message("Welcome to")
+    String welcome_to();
+
+    @Message("Sign in to")
+    String sign_in_to();
+
+    @Message("New to")
+    String new_to();
+
+    @Message("Back to")
+    String back_to();
+
+    @Message("Sign in")
+    String sign_in();
+
+    @Message("Sign up")
+    String sign_up();
+
+    @Message("Sign out")
+    String sign_out();
+
+    @Message("Forgot password?")
+    String forgot_password();
+
+    @Message("Create an account")
+    String create_an_account();
 
     @Message("Birthdate")
     String birthdate();
@@ -62,6 +116,9 @@ public interface AppMessages {
 
     @Message("Owner")
     String owner();
+
+    @Message("User")
+    String user();
 
     @Message("Edit Pet")
     String edit_pet();
@@ -96,7 +153,18 @@ public interface AppMessages {
     @Message("Previous Visits")
     String previous_visits();
 
-    @Message("Something happened...")
-    String something_wrong();
+    @Message("Something went wrong!!!")
+    String something_went_wrong();
 
+    @Message("Information")
+    String information();
+
+    @Message("OTP")
+    String OTP();
+
+    @Message("Verify")
+    String verify();
+
+    @Message("Alert")
+    String alert();
 }

@@ -29,7 +29,7 @@ Start the application:
 
 [source, bash]
 ----
-java -Dquarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/petclinic -Dquarkus.datasource.username=petclinic -Dquarkus.datasource.password=petclinic -jar target/quarkus-app/quarkus-run.jar
+java -Dquarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/petclinic -Dquarkus.datasource.username=developer -Dquarkus.datasource.password=changeme -jar target/quarkus-app/quarkus-run.jar
 ----
 
 == Kubernetes

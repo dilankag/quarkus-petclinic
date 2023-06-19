@@ -1,0 +1,69 @@
+{#include default}
+  {#body}
+      <div class="mb-4 pb-3 h4 text-normal text-center">
+          <h2>{msg:user} {msg:information}</h2>
+      </div>
+      <table class="table table-striped">
+          <tr>
+            <th>{msg:name}</th>
+            <td><b>{user.firstName} {user.lastName}</b></td>
+          </tr>
+          <tr>
+            <th>{msg:email}</th>
+            <td>{user.email}</td>
+          </tr>
+          <tr>
+            <th>{msg:password}</th>
+            <td>
+                {user.password}
+                <p>
+                    <strong>NOTICE:</strong>
+                    <p>
+                    We decided to show the encrypted password purely for testing purpose, to make sure that hash works well.
+                    We don't expect to show the password in production environment whatsoever.
+                    </p>
+                </p>
+            </td>
+          </tr>
+          <tr>
+            <th>{msg:OTP}</th>
+            <td>
+                  <form action="/sign-up/verify" class="form-horizontal" id="sign-up-form" method="post">
+                      <div class="form-group" id="verifyGroup">
+                          <div class="col-sm-offset-2 col-sm-10">
+                              <input class="form-control" type="hidden" id="firstName" name="firstName" value="{user.firstName ?: ''}" />
+                              <input class="form-control" type="hidden" id="lastName" name="lastName" value="{user.lastName ?: ''}" />
+                              <input class="form-control" type="hidden" id="email" name="email" value="{user.email ?: ''}" />
+                              <input class="form-control" type="hidden" id="password" name="password" value="{user.password ?: ''}" />
+                              <input class="form-control" type="text" id="OTP" name="OTP" value="{user.OTP ?: ''}" />
+                              <button type="submit" class="btn btn-primary">{msg:verify} {msg:OTP}</button>
+                              {#if error != null}
+                                  <span class="help-inline">
+                                  <strong>{error.getMessage()}</strong>
+                                  </span>
+                              {/if}
+                          </div>
+                      </div>
+                  </form>
+            </td>
+          </tr>
+          <tr>
+            <th>{msg:alert}</th>
+            <td>
+                <p>An OTP has been sent to <i>{user.email}</i> inbox.</p>
+                <p>
+                    <strong>NOTICE:</strong>
+                    <p>
+                    We are making a reasonable assumption that the OTP has been successfully sent to <i>{user.email}</i> inbox
+                    via SMTP mailer service, therefore the OTP is shown purely for testing purpose, to mock the mail server.
+                    We don't expect to show the OTP in production environment whatsoever.
+                    </p>
+                </p>
+            </td>
+          </tr>
+      </table>
+      <div>
+        {msg:back_to} <a class="label-link" href="/sign-in">{msg:sign_in}</a>
+      </div>
+  {/body}
+{/include}

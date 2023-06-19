@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 

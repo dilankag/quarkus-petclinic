@@ -5,7 +5,11 @@ import io.quarkus.qute.i18n.Message;
 
 @Localized("es")
 public interface SpanishAppMessages extends AppMessages {
-    
+
+    @Override
+    @Message("Quarkus Pet Clinic")
+    String product_title();
+
     @Override
     @Message("Buscar Propietario")
     String find_owner();
@@ -31,8 +35,36 @@ public interface SpanishAppMessages extends AppMessages {
     String name();
 
     @Override
-    @Message("Error")
+    @Message("Nombre de pila")
+    String first_name();
+
+    @Override
+    @Message("Ops")
     String error();
+
+    @Override
+    @Message("Usuario no encontrado!")
+    String error_user_not_found();
+
+    @Override
+    @Message("Credenciales de usuario no coincidentes!")
+    String error_user_credentials_not_matched();
+
+    @Override
+    @Message("Credenciales de usuario no proporcionadas!")
+    String error_user_credentials_not_supplied();
+
+    @Override
+    @Message("La autenticación del usuario ha fallado!")
+    String error_user_authentication_has_failed();
+
+    @Override
+    @Message("OTP no coincidente!")
+    String error_otp_not_matched();
+
+    @Override
+    @Message("La usuario ya existe!")
+    String error_user_already_exist();
 
     @Override
     @Message("Veterinarios")
@@ -55,6 +87,14 @@ public interface SpanishAppMessages extends AppMessages {
     String telephone();
 
     @Override
+    @Message("Correo electrónico")
+    String email();
+
+    @Override
+    @Message("Contraseña")
+    String password();
+
+    @Override
     @Message("Mascotas")
     String pets();
 
@@ -63,8 +103,40 @@ public interface SpanishAppMessages extends AppMessages {
     String specialties();
 
     @Override
-    @Message("Bienvenidos")
-    String welcome();
+    @Message("Bienvenido a")
+    String welcome_to();
+
+    @Override
+    @Message("Registrarse en")
+    String sign_in_to();
+
+    @Override
+    @Message("Nuevo en")
+    String new_to();
+
+    @Override
+    @Message("De regreso")
+    String back_to();
+
+    @Override
+    @Message("Registrarse")
+    String sign_in();
+
+    @Override
+    @Message("Inscribirse")
+    String sign_up();
+
+    @Override
+    @Message("Desconectar")
+    String sign_out();
+
+    @Override
+    @Message("¿Has olvidado tu contraseña?")
+    String forgot_password();
+
+    @Override
+    @Message("Crea una cuenta")
+    String create_an_account();
 
     @Override
     @Message("Ciudad")
@@ -106,12 +178,16 @@ public interface SpanishAppMessages extends AppMessages {
     String description();
 
     @Override
-    @Message("Algo ha ocurrido...")
-    String something_wrong();
+    @Message("Algo salió mal!!!")
+    String something_went_wrong();
 
     @Override
     @Message("Propietario")
     String owner();
+
+    @Override
+    @Message("Usuaria")
+    String user();
 
     @Override
     @Message("Fecha")
@@ -120,5 +196,21 @@ public interface SpanishAppMessages extends AppMessages {
     @Override
     @Message("Visitas Anteriores")
     String previous_visits();
+
+    @Override
+    @Message("información")
+    String information();
+
+    @Override
+    @Message("OTP")
+    String OTP();
+
+    @Override
+    @Message("Verificar")
+    String verify();
+
+    @Override
+    @Message("Alerta")
+    String alert();
 
 }

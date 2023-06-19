@@ -1,12 +1,12 @@
-{#include base} 
+{#include default}
   {#body}
-  <h2>{msg:welcome}</h2>
-  <div class="row">
-      <div class="col-md-12">
-        <img class="img-responsive" src="../images/pets.png"/>
-        <h2>{msg:error}</h2>
-        <p>{msg:something_wrong}</p>
+      <div class="row">
+          <div class="mb-4 pb-3 h4 text-normal text-center">
+              <h2>{msg:welcome_to} <strong>{msg:product_title}</strong></h2>
+              <h2>{msg:error}</h2>
+              <p>{msg:something_went_wrong}</p>
+              {msg:back_to} <a class="label-link" href="/sign-in">{msg:sign_in}</a>
+          </div>
       </div>
-  </div>
   {/body}
 {/include}

@@ -1,3 +1,4 @@
+
 INSERT INTO vets(id, first_name, last_name) VALUES (1001, 'James', 'Carter');
 INSERT INTO vets(id, first_name, last_name) VALUES (1002, 'Helen', 'Leary');
 INSERT INTO vets(id, first_name, last_name) VALUES (1003, 'Linda', 'Douglas');
