@@ -70,9 +70,9 @@ public class SignUpResource {
      *
      * @return
      */
-    public TemplateInstance verify(@BeanParam User user, @FormParam("OTP") String OTP) {
+    public TemplateInstance verify(@BeanParam User user, @FormParam("OTP_V") String OTP_V) {
         final Error ERROR_OPT_NOT_MATCHED = new Error(messages.error_otp_not_matched());
-        if (user.OTP.equals(OTP)) {
+        if (user.OTP.equals(OTP_V)) {
             user.verified = true;
             return templates.welcome(user);
         } else {

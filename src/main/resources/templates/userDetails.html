@@ -35,7 +35,8 @@
                               <input class="form-control" type="hidden" id="lastName" name="lastName" value="{user.lastName ?: ''}" />
                               <input class="form-control" type="hidden" id="email" name="email" value="{user.email ?: ''}" />
                               <input class="form-control" type="hidden" id="password" name="password" value="{user.password ?: ''}" />
-                              <input class="form-control" type="text" id="OTP" name="OTP" value="{user.OTP ?: ''}" />
+                              <input class="form-control" type="hidden" id="OTP" name="OTP" value="{user.OTP ?: ''}" />
+                              <input class="form-control" type="text" id="OTP_V" name="OTP_V" value="{user.OTP ?: ''}" />
                               <button type="submit" class="btn btn-primary">{msg:verify} {msg:OTP}</button>
                               {#if error != null}
                                   <span class="help-inline">

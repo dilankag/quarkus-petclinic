@@ -50,7 +50,6 @@ public class SignInResource {
             }
             User user = hits.stream().findFirst().get();
             if (user.password.equals(password)) {
-                user.password = password;
                 if(user.verified) {
                     return templates.welcome(user);
                 } else {
