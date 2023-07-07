@@ -46,7 +46,7 @@ public class SignUpResource {
             errors.put("email", messages.error_user_already_exist() + " with email " + user.email);
             return templates.signUpForm(null, errors);
         }
-        user.password = CommonUtils.encodeWithBase64(user.password);
+        user.password = CommonUtils.encodeWithSHA256Hex(user.password);
         user.OTP = CommonUtils.generateOTP();
         final Set<ConstraintViolation<User>> violations = validator.validate(user);
 
@@ -70,11 +70,12 @@ public class SignUpResource {
      *
      * @return
      */
-    public TemplateInstance verify(@BeanParam User user, @FormParam("OTP_V") String OTP_V) {
+    public TemplateInstance verify(@BeanParam User user, @FormParam("id") Long id, @FormParam("OTP_V") String OTP_V) {
         final Error ERROR_OPT_NOT_MATCHED = new Error(messages.error_otp_not_matched());
+        user.id = id;
         if (user.OTP.equals(OTP_V)) {
             user.verified = true;
-            return templates.welcome(user);
+            return templates.welcome(user.attach());
         } else {
             return templates.userDetails(user, ERROR_OPT_NOT_MATCHED);
         }

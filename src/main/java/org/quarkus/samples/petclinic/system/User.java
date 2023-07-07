@@ -43,7 +43,7 @@ public class User extends Person {
 
     @Override
     public String toString() {
-        return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+        return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
     }
 
 }

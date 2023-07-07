@@ -31,6 +31,7 @@
                   <form action="/sign-up/verify" class="form-horizontal" id="sign-up-form" method="post">
                       <div class="form-group" id="verifyGroup">
                           <div class="col-sm-offset-2 col-sm-10">
+                              <input class="form-control" type="hidden" id="id" name="id" value="{user.id ?: ''}" />
                               <input class="form-control" type="hidden" id="firstName" name="firstName" value="{user.firstName ?: ''}" />
                               <input class="form-control" type="hidden" id="lastName" name="lastName" value="{user.lastName ?: ''}" />
                               <input class="form-control" type="hidden" id="email" name="email" value="{user.email ?: ''}" />
