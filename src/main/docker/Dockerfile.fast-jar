@@ -3,8 +3,7 @@
 #
 # Before building the container image run:
 #
-./mvnw compile -Pcss
-./mvnw clean package
+# ./mvnw package -Dquarkus.package.type=fast-jar
 #
 # Then, build the image with:
 #
