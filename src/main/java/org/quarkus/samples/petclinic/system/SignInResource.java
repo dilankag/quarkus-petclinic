@@ -43,7 +43,7 @@ public class SignInResource {
             if (email.isEmpty() || password.isEmpty()) {
                 return templates.signInForm(email, ERROR_USER_CREDENTIALS_NOT_SUPPLIED);
             }
-            password = CommonUtils.encodeWithSHA256Hex(password);
+            password = CommonUtils.encodeWithSHA256(password);
             Collection<User> hits = User.findByEmail(email);
             if (hits.isEmpty()) {
                 return templates.signInForm(email, ERROR_USER_NOT_FOUND);

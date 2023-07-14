@@ -46,7 +46,7 @@ public class SignUpResource {
             errors.put("email", messages.error_user_already_exist() + " with email " + user.email);
             return templates.signUpForm(null, errors);
         }
-        user.password = CommonUtils.encodeWithSHA256Hex(user.password);
+        user.password = CommonUtils.encodeWithSHA256(user.password);
         user.OTP = CommonUtils.generateOTP();
         final Set<ConstraintViolation<User>> violations = validator.validate(user);
 
