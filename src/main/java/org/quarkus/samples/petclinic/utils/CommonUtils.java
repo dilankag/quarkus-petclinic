@@ -21,17 +21,14 @@ public class CommonUtils {
      * We can strengthen the encoding algorithm using a much stronger cipher (such as SHA2-256 or SHA3-256).
      * We follow SHA-256 one-way encoding method here.
      */
-    public static String encodeWithSHA256Hex(String value) {
+    public static String encodeWithSHA256(String value) {
         try {
             MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
             byte[] digest = sha256.digest(value.getBytes(StandardCharsets.UTF_8));
-            StringBuilder hash = new StringBuilder(2 * digest.length);
+            StringBuilder hash = new StringBuilder("sha256~");
             for (int i = 0; i < digest.length; i++) {
-                String hex = Integer.toHexString(digest[i]);
-                if (hex.length() == 1) {
-                    hash.append('x');
-                }
-                hash.append(hex);
+                String hex = Integer.toHexString(0xff & digest[i]);
+                hash.append(Integer.toString(digest[i]));
             }
             return hash.toString();
         } catch (NoSuchAlgorithmException e) {
